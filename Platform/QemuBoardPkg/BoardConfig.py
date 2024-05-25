@@ -109,7 +109,8 @@ class Board(BaseBoard):
 
         self.TEST_SIZE            = 0x00001000
         self.SIIPFW_SIZE          = 0x00010000
-        self.EPAYLOAD_SIZE        = 0x0020D000
+#        self.EPAYLOAD_SIZE        = 0x0020D000
+        self.EPAYLOAD_SIZE        = 0x004F0000
         self.PAYLOAD_SIZE         = 0x00020000
         self.CFGDATA_SIZE         = 0x00001000
         self.KEYHASH_SIZE         = 0x00001000
@@ -123,14 +124,14 @@ class Board(BaseBoard):
             self.TOP_SWAP_SIZE      = 0x000000
             self.REDUNDANT_SIZE     = 0x000000
             self.NON_VOLATILE_SIZE  = 0x000000
-            self.NON_REDUNDANT_SIZE = 0x400000
+            self.NON_REDUNDANT_SIZE = 0x6E3000
         else:
             self.TOP_SWAP_SIZE      = 0x010000
             if self.NO_OPT_MODE:
                 self.TOP_SWAP_SIZE  = 0x020000
             self.REDUNDANT_SIZE     = 0x080000
             self.NON_VOLATILE_SIZE  = 0x001000
-            self.NON_REDUNDANT_SIZE = 0x2DF000
+            self.NON_REDUNDANT_SIZE = 0x5C2000
 
 
         self.SLIMBOOTLOADER_SIZE = (self.TOP_SWAP_SIZE + self.REDUNDANT_SIZE) * 2 + \
