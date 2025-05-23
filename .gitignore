@@ -2,6 +2,7 @@
 !.azurepipelines/
 *.log
 *.pyc
+cscope.*
 Platform.dsc
 ConfigDataBlob.h
 ConfigDataDynamic.h

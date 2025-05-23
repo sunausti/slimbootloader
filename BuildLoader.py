@@ -238,7 +238,7 @@ class BaseBoard(object):
         self.PLD_RSVD_MEM_SIZE     = 0x00004000
 
         # These memory sizes need to be page aligned
-        self.LOADER_RSVD_MEM_SIZE         = 0x0038C000
+        self.LOADER_RSVD_MEM_SIZE         = 0x0438C000
         self.LOADER_ACPI_NVS_MEM_SIZE     = 0x00008000
         self.LOADER_ACPI_RECLAIM_MEM_SIZE = 0x00068000
 
@@ -1426,6 +1426,7 @@ class Build(object):
         board_package_name = self._board.BOARD_PKG_NAME
         if hasattr(self._board, 'BOARD_PKG_NAME_OVERRIDE'):
             board_package_name = self._board.BOARD_PKG_NAME_OVERRIDE
+        print("pld_list is: ",self._pld_list)
         gen_payload_bin (self._fv_dir, self._arch, self._pld_list,
                          os.path.join(self._fv_dir, "PAYLOAD.bin"),
                          self._board._CONTAINER_PRIVATE_KEY, HASH_VAL_STRING[self._board.SIGN_HASH_TYPE],

@@ -485,6 +485,7 @@ SecStartup2 (
 
   // Prepare Global Data structure
   OldLdrGlobal   = LdrGlobal;
+  DEBUG ((DEBUG_INFO, "FspReservedMemBase: 0x%08X,PcdLoaderReservedMemSize: 0x%08X HobStackSize: 0x%08X\n",FspReservedMemBase,PcdGet32 (PcdLoaderReservedMemSize) , PcdGet32 (PcdLoaderHobStackSize) ));
   MemPoolStart   = FspReservedMemBase - PcdGet32 (PcdLoaderReservedMemSize);
   MemPoolEnd     = FspReservedMemBase - PcdGet32 (PcdLoaderHobStackSize);
   MemPoolCurrTop = ALIGN_DOWN (MemPoolEnd - sizeof (LOADER_GLOBAL_DATA), 0x10);

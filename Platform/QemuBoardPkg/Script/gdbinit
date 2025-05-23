@@ -13,4 +13,4 @@ focus src
 set auto-load python-scripts on
 loadthis
 break SecStartup
-c
+break InternalUpdateMemPoolTop
