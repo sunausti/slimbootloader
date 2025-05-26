@@ -111,7 +111,8 @@ class Board(BaseBoard):
         self.TEST_SIZE            = 0x00001000
         self.SIIPFW_SIZE          = 0x00010000
         self.EPAYLOAD_SIZE        = 0x0020D000
-        self.PAYLOAD_SIZE         = 0x00021000
+#        self.PAYLOAD_SIZE         = 0x00021000
+        self.PAYLOAD_SIZE         = 0x00100000
         self.CFGDATA_SIZE         = 0x00001000
         self.KEYHASH_SIZE         = 0x00001000
         self.VARIABLE_SIZE        = 0x00002000
@@ -124,14 +125,16 @@ class Board(BaseBoard):
             self.TOP_SWAP_SIZE      = 0x000000
             self.REDUNDANT_SIZE     = 0x000000
             self.NON_VOLATILE_SIZE  = 0x000000
-            self.NON_REDUNDANT_SIZE = 0x400000
+#            self.NON_REDUNDANT_SIZE = 0x400000
+            self.NON_REDUNDANT_SIZE = 0x600000
         else:
             self.TOP_SWAP_SIZE      = 0x010000
             if self.NO_OPT_MODE:
                 self.TOP_SWAP_SIZE  = 0x020000
             self.REDUNDANT_SIZE     = 0x080000
             self.NON_VOLATILE_SIZE  = 0x001000
-            self.NON_REDUNDANT_SIZE = 0x2DF000
+#            self.NON_REDUNDANT_SIZE = 0x2DF000
+            self.NON_REDUNDANT_SIZE = 0x600000
 
 
         self.SLIMBOOTLOADER_SIZE = (self.TOP_SWAP_SIZE + self.REDUNDANT_SIZE) * 2 + \
@@ -153,7 +156,6 @@ class Board(BaseBoard):
             if self.NO_OPT_MODE:
                 self.STAGE1B_FD_SIZE += 0xE000
             self.STAGE1B_FD_BASE    = FREE_TEMP_RAM_TOP - self.STAGE1B_FD_SIZE
-
         # For Stage2, it is always compressed.
         # if STAGE2_LOAD_HIGH is 1, STAGE2_FD_BASE will be ignored
         self.STAGE2_FD_BASE       = 0x01000000
@@ -171,7 +173,7 @@ class Board(BaseBoard):
 
         self.STAGE1_STACK_SIZE    = 0x00002000
         self.STAGE1_DATA_SIZE     = 0x0000E000
-        self.LOADER_RSVD_MEM_SIZE = 0x00800000
+        self.LOADER_RSVD_MEM_SIZE = 0x00C00000
         self.CFG_DATABASE_SIZE    = self.CFGDATA_SIZE
 
         # Add following to force to use a specific platform ID

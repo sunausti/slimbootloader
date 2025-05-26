@@ -35,6 +35,8 @@ InternalUpdateMemPoolTop (
   if (LdrGlobal->MemPoolMaxUsed < PoolUsed) {
     LdrGlobal->MemPoolMaxUsed = PoolUsed;
   }
+  DEBUG((DEBUG_INFO, "TOP:%x, Bottom:%x\n", Top,LdrGlobal->MemPoolCurrBottom));
+
   ASSERT (Top >= LdrGlobal->MemPoolCurrBottom);
   LdrGlobal->MemPoolCurrTop = Top;
 }

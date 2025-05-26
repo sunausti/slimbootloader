@@ -13,3 +13,7 @@ ResetVector.*.raw
 /Conf
 /PayloadPkg/PayloadBins
 PayloadModPkg
+cscope.in.out
+cscope.out
+cscope.po.out
+
